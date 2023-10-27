@@ -1,7 +1,6 @@
-const reviewTotalDisplay = document.querySelector("#reviews");
-const returningUserDisplay = document.querySelector("#returning-user");
-const userNameDisplay = document.querySelector("#user");
-
+const reviewTotalDisplay = document.querySelector("#reviews")!;
+const returningUserDisplay = document.querySelector("#returning-user")!;
+const userNameDisplay = document.querySelector("#user")!;
 import { LoyaltyUser, Permissions } from "./enums";
 import Review from "./interfaces";
 
@@ -13,7 +12,7 @@ export function showReviewTotal(
   const iconDisplay = LoyaltyUser.GOLD_USER ? "⭐" : "";
   reviewTotalDisplay.innerHTML =
     value.toString() +
-    "review" +
+    " review" +
     makeMultiple(value) +
     " | last reviewed by " +
     reviewer +
@@ -23,21 +22,20 @@ export function showReviewTotal(
 
 export function populateUser(isReturning: boolean, userName: string) {
   if (isReturning) {
-    returningUserDisplay.innerHTML = "back!";
+    returningUserDisplay.innerHTML = "back";
   }
-
   userNameDisplay.innerHTML = userName;
 }
 
 export function showDetails(
   value: boolean | Permissions,
-  elemnt: HTMLElement,
+  element: HTMLDivElement,
   price: number
 ) {
   if (value) {
     const priceDisplay = document.createElement("div");
     priceDisplay.innerHTML = price.toString() + "/night";
-    elemnt.appendChild(priceDisplay);
+    element.appendChild(priceDisplay);
   }
 }
 

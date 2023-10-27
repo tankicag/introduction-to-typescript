@@ -9,31 +9,31 @@ import { LoyaltyUser, Permissions } from "./enums";
 import Review from "./interfaces";
 import { Price, Country } from "./types";
 
-const propertyContainer = document.querySelector(".properties");
-const reviewContainer = document.querySelector(".reviews");
-const container = document.querySelector(".container");
-const button = document.querySelector(".button");
-const footer = document.querySelector(".footer");
+// const propertyContainer = document.querySelector(".properties");
+// const reviewContainer = document.querySelector(".reviews");
+// const container = document.querySelector(".container");
+// const button = document.querySelector(".button");
+// const footer = document.querySelector(".footer");
 
 let isLoggedIn: boolean;
 
-enum Permissions {
-  ADMIN = "ADMIN",
-  READ_ONLY = "READ_ONLY",
-}
+// enum Permissions {
+//   ADMIN = "ADMIN",
+//   READ_ONLY = "READ_ONLY",
+// }
 
-enum LoyaltyUser {
-  GOLD_USER = "GOLD_USER",
-  SILVER_USER = "SILVER_USER",
-  BROZNE_USER = "BROZNE_USER",
-}
+// enum LoyaltyUser {
+//   GOLD_USER = "GOLD_USER",
+//   SILVER_USER = "SILVER_USER",
+//   BROZNE_USER = "BROZNE_USER",
+// }
 
-interface Review {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}
+// interface Review {
+//   name: string;
+//   stars: number;
+//   loyaltyUser: LoyaltyUser;
+//   date: string;
+// }
 
 const reviews: Review[] = [
   {
@@ -45,7 +45,7 @@ const reviews: Review[] = [
   {
     name: "Andrzej",
     stars: 3,
-    loyaltyUser: LoyaltyUser.BROZNE_USER,
+    loyaltyUser: LoyaltyUser.BRONZE_USER,
     date: "28-03-2021",
   },
   {
@@ -98,9 +98,4 @@ const properties: Property[] = [
 ];
 
 // Solution
-function showReviewTotal(value: number, reviewer: string) {
-  reviewTotalDisplay.innerHTML =
-    "review total " + value.toString() + "| last reviewed by " + reviewer;
-}
-
-showReviewTotal(reviews.length, reviews[0].name);
+//
