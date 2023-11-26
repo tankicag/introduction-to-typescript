@@ -1,13 +1,13 @@
 const reviewTotalDisplay = document.querySelector("#reviews")!;
 const returningUserDisplay = document.querySelector("#returning-user")!;
 const userNameDisplay = document.querySelector("#user")!;
-import { LoyaltyUser, Permissions } from "./enums";
-import Review from "./interfaces";
+import { LoyaltyUser, Permissions } from "./enums.js";
+import Review from "./interfaces.js";
 
 export function showReviewTotal(
   value: number,
   reviewer: string,
-  isLoyalty: LoyaltyUser
+  isLoyalty: LoyaltyUser,
 ) {
   const iconDisplay = LoyaltyUser.GOLD_USER ? "⭐" : "";
   reviewTotalDisplay.innerHTML =
@@ -30,7 +30,7 @@ export function populateUser(isReturning: boolean, userName: string) {
 export function showDetails(
   value: boolean | Permissions,
   element: HTMLDivElement,
-  price: number
+  price: number,
 ) {
   if (value) {
     const priceDisplay = document.createElement("div");
